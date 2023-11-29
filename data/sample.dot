@@ -1,0 +1,40 @@
+digraph {
+    Char_Pine_Ice[label="Pine"]
+    Char_Summer_Fire[label="Summer"]
+    Char_Sparks_Lightning[label="Sparks"]
+    Start[label="Start"]
+    End[label="End"]
+    // this is the "prologue"
+    Start -> Char_Pine_Ice -> Char_Summer_Fire -> Char_Sparks_Lightning
+    
+    Town_Littledom[label="Littledom"]
+    Town_Myrindir[label="Myrindir"]
+    Town_Fuzzlbuzz[label="Fuzzlbuzz"]
+
+    Dun_Cave[label="Cave"]
+    Dun_Acropolis[label="Acropolis"]
+    Dun_Tomb[label="Tomb"]
+
+    Key_Map[label="Map"]
+    Key_Wings[label="Wings"]
+    Key_Powder[label="Powder"]
+
+    Weap_Flambridge_Fire[label="Flambridge"]
+    Arm_Gauntlets_Wind[label="Gauntlets"]
+    Weap_Gun_Lightning[label="Gun"]
+
+    Boss_Bear_Fire[label="Bear"]
+    Boss_Hydra_Lighting[label="Hydra"]
+    Boss_Roc_Wind[label="Roc"]
+
+    // subgraphs for our patterns, boss links against previous equipment
+    Town_Littledom->Weap_Flambridge_Fire->Dun_Cave->Boss_Bear_Fire->Key_Map
+    Town_Myrindir->Arm_Gauntlets_Wind->Dun_Tomb->Boss_Roc_Wind->Key_Powder
+    Town_Fuzzlbuzz->Weap_Gun_Lightning->Dun_Acropolis->Boss_Hydra_Lighting->Key_Wings
+
+    // putting it all together
+    Key_Map->Town_Myrindir
+    Key_Powder->Town_Fuzzlbuzz
+    Key_Wings->End
+    Char_Sparks_Lightning->Town_Littledom
+}

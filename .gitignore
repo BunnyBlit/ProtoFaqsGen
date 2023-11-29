@@ -1,0 +1,5 @@
+.conda/
+.vscode/
+.DS_Store
+original_version
+__pycache__
