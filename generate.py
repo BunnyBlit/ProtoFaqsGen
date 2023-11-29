@@ -50,7 +50,7 @@ def generate_faq(args):
 def build_parser() -> ArgumentParser:
     """Utility function to build out the parser we use to parse CLI arguments
     """
-    parser = ArgumentParser(description="A tool to parse an annotated graph and emit the information we'd pass to a grammar")
+    parser = ArgumentParser(description="A prototype of how we'd generate Gamefaqs guides!")
     parser.add_argument("-f", "--file", type=Path, help="Path to an input graph file")
     parser.set_defaults(func=generate_faq)
     return parser
